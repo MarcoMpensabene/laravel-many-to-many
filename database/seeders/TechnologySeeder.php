@@ -2,17 +2,16 @@
 
 namespace Database\Seeders;
 
-use App\Models\Technologies;
+use App\Models\Technology;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 
-class TechnologiesSeeder extends Seeder
+class TechnologySeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(Faker $faker): void
+    public function run(): void
     {
         $technologiesData = [
             [
@@ -42,7 +41,7 @@ class TechnologiesSeeder extends Seeder
         ];
 
         foreach ($technologiesData as $technologyData) {
-            Technologies::create($technologyData);
+            Technology::create($technologyData);
         }
     }
 }
