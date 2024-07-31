@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,8 @@ class ProjectController extends Controller
     {
         $project = new Project();
         $types = Type::all();
-        return view('admin.projects.create', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -42,6 +44,7 @@ class ProjectController extends Controller
         $data = $request->validated();
         $data['user_id'] = Auth::user()->id;
         $newProject = Project::create($data);
+        $newProject->technologies()->sync($data["technology"]);
         return redirect()->route('admin.projects.show', $newProject);
     }
 
@@ -59,7 +62,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -70,6 +74,7 @@ class ProjectController extends Controller
         // dd($request->all());
         $data = $request->validated(); //richiedo tutti i dati
         $project->update($data); // modifico i dati del singolo Projecte attraverso il mio form con i value già presenti
+        $project->technologies()->sync($data["technology"]);
         return redirect()->route('admin.projects.show', $project)->with('message', $project->title . " Has Been Edited");
     }
 

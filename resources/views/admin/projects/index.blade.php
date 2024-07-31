@@ -43,7 +43,7 @@
                                 <span class="badge rounded-pill" style="background-color: {{$technology->color}}">{{ Str::limit($technology->name , 20) }}</span> @if (!$loop->last) | @endif
                                 {{--  ! if che serve a inserire quasiasi cosa fino a che non arriva all'ultimo elemento --}}
                             @empty
-                                    <td>No Technology used </td>
+                                    <td class="badge rounded-pill">No Technology used </td>
                             @endforelse
                             </td>
                             <td>

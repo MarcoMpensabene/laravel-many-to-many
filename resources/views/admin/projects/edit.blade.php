@@ -19,6 +19,7 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="type_id">Type</label>
                     <select class="form-select" aria-label="Default select example" name="type_id">
                         @foreach ($types as $type)
                         <option value="{{$type->id}}"
@@ -54,13 +55,19 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="stack">Stack</label>
-                    {{-- <input class="form-control form-control-sm" type="text" placeholder="stack" aria-label="Stack " name="stack" id="stack" value={{old('stack' ,$project->stack)}}>
-                    @error('stack')
-                    <div class="alert alert-danger mt-2">
-                        {{$message}}
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+
+                        @foreach ($technologies as $technology)
+                        @if ($errors->any())
+                            <input type="checkbox" class="btn-check" name="technology[]" id="technology-check-{{$technology->id}}" autocomplete="off" value="
+                            {{$technology->id}}" {{in_array($technology->id, old('technology' , [])) ? "checked" : ""}}>
+                        @else
+                            <input type="checkbox" class="btn-check" name="technology[]" id="technology-check-{{$technology->id}}" autocomplete="off" value="
+                            {{$technology->id}}" {{$project->technologies->contains($technology) ? "checked" : ""}}>
+                        @endif
+                        <label class="btn btn-outline-primary" for="technology-check-{{$technology->id}}">{{$technology->name}}</label>
+                        @endforeach
                     </div>
-                    @enderror --}}
                 </div>
 
                 <div class="mb-3 d-flex justify-content-between p-2">

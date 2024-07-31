@@ -25,9 +25,8 @@ class StoreProjectRequest extends FormRequest
             'type_id' => 'required|exists:types,id',
             'title' => 'required|string|unique:Projects|min:3|max:255',
             'description' => 'required|min:50|max:300|string',
-            'author' => 'min:3|string|max:40',
             'image_url' => 'required|url',
-            'stack' => 'required|string|max:255',
+            'technology' => 'required|array|exists:technologies,id',
 
 
         ];
