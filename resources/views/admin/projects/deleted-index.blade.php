@@ -17,6 +17,7 @@
                             <tr>
                                 <th scope="col">id</th>
                                 <th scope="col">Projectname</th>
+                                <th scope="col">Type</th>
                                 <th scope="col">Desciption</th>
                                 <th scope="col">Author</th>
                                 <th scope="col">Image_url</th>
@@ -29,6 +30,9 @@
                             <tr>
                                 <td >{{$project->id}}</td>
                                 <td >{{$project->title}}</td>
+                                <td >
+                                    <span class="badge p-2" style="background-color : {{$project->type->color}}">{{ $project->type ? $project->type->name : 'No type' }}</span>
+                                </td>
                                 <td >{{$project->description}}</td>
                                 <td >{{$project->author}}</td>
                                 <td >{{$project->image_url}}</td>
