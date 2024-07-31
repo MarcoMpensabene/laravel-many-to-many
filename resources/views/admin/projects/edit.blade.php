@@ -44,16 +44,6 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="author">Author</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="Author" aria-label="Author" name="author" id="author" value={{old('author' ,$project->author)}}>
-                    @error('author')
-                    <div class="alert alert-danger mt-2">
-                        {{$message}}
-                    </div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
                     <label for="image_url">URL Immagine</label>
                     <input class="form-control form-control-sm" type="text" placeholder="URL" aria-label="URL" name="image_url" id="image_url" value={{old('imamge_url' ,$project->image_url)}}>
                     @error('image_url')
