@@ -19,7 +19,7 @@
                         <th scope="col">Description</th>
                         <th scope="col">Author</th>
                         <th scope="col">Image URL</th>
-                        <th scope="col">Stack</th>
+                        <th scope="col">Technologies</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -38,7 +38,14 @@
                             <td>{{ Str::limit($project->description, 50) }}</td> <!-- Limita la lunghezza -->
                             <td>{{ $project->user->name }}</td>
                             <td>{{ Str::limit($project->image_url, 20) }}</td> <!-- Limita la lunghezza -->
-                            {{-- <td>{{ Str::limit($project->stack, 20) }}</td> <!-- Limita la lunghezza --> --}}
+                            <td>
+                            @forelse ($project->technologies as $technology)
+                                <span class="badge rounded-pill" style="background-color: {{$technology->color}}">{{ Str::limit($technology->name , 20) }}</span> @if (!$loop->last) | @endif
+                                {{--  ! if che serve a inserire quasiasi cosa fino a che non arriva all'ultimo elemento --}}
+                            @empty
+                                    <td>No Technology used </td>
+                            @endforelse
+                            </td>
                             <td>
                                 <div class="d-flex">
                                     <a class="btn btn-primary btn-sm me-1" href="{{ route('admin.projects.show', $project) }}">View</a>
