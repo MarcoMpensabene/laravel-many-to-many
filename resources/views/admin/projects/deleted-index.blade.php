@@ -34,7 +34,7 @@
                                     <span class="badge p-2" style="background-color : {{$project->type->color}}">{{ $project->type ? $project->type->name : 'No type' }}</span>
                                 </td>
                                 <td >{{$project->description}}</td>
-                                <td >{{$project->author}}</td>
+                                <td >{{$project->user->name}}</td>
                                 <td >{{$project->image_url}}</td>
                                 <td >{{$project->stack}}</td>
                                 <td >

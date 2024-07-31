@@ -36,7 +36,7 @@
                             </td>
                             <td>{{ $project->title }}</td>
                             <td>{{ Str::limit($project->description, 50) }}</td> <!-- Limita la lunghezza -->
-                            <td>{{ $project->author }}</td>
+                            <td>{{ $project->user->name }}</td>
                             <td>{{ Str::limit($project->image_url, 20) }}</td> <!-- Limita la lunghezza -->
                             <td>{{ Str::limit($project->stack, 20) }}</td> <!-- Limita la lunghezza -->
                             <td>

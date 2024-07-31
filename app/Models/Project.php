@@ -15,7 +15,7 @@ class Project extends Model
         'type_id',
         'title',
         'description',
-        'author',
+        'user_id',
         'image_url',
         'stack'
     ];
@@ -23,5 +23,10 @@ class Project extends Model
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
