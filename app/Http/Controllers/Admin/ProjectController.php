@@ -17,9 +17,10 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Project $project)
+    public function index()
     {
         $projects = Project::all();
+        // $projects = Project::where("user_id", Auth::id())->get(); // ! Mostra solo i post collegati all'account (grazie allo user_id )
         return view('admin.projects.index', compact('projects'));
     }
 

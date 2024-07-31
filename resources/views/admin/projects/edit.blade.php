@@ -55,12 +55,12 @@
 
                 <div class="mb-3">
                     <label for="stack">Stack</label>
-                    <input class="form-control form-control-sm" type="text" placeholder="stack" aria-label="Stack " name="stack" id="stack" value={{old('stack' ,$project->stack)}}>
+                    {{-- <input class="form-control form-control-sm" type="text" placeholder="stack" aria-label="Stack " name="stack" id="stack" value={{old('stack' ,$project->stack)}}>
                     @error('stack')
                     <div class="alert alert-danger mt-2">
                         {{$message}}
                     </div>
-                    @enderror
+                    @enderror --}}
                 </div>
 
                 <div class="mb-3 d-flex justify-content-between p-2">

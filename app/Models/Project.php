@@ -17,7 +17,6 @@ class Project extends Model
         'description',
         'user_id',
         'image_url',
-        'stack'
     ];
 
     public function type()

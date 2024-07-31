@@ -36,7 +36,7 @@
                                 <td >{{$project->description}}</td>
                                 <td >{{$project->user->name}}</td>
                                 <td >{{$project->image_url}}</td>
-                                <td >{{$project->stack}}</td>
+                                {{-- <td >{{$project->stack}}</td> --}}
                                 <td >
                                     <div class="d-flex">
                                         <form action="{{route("admin.projects.restore" , $project)}}" method="POST" class="me-2">

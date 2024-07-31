@@ -38,7 +38,7 @@
                             <td>{{ Str::limit($project->description, 50) }}</td> <!-- Limita la lunghezza -->
                             <td>{{ $project->user->name }}</td>
                             <td>{{ Str::limit($project->image_url, 20) }}</td> <!-- Limita la lunghezza -->
-                            <td>{{ Str::limit($project->stack, 20) }}</td> <!-- Limita la lunghezza -->
+                            {{-- <td>{{ Str::limit($project->stack, 20) }}</td> <!-- Limita la lunghezza --> --}}
                             <td>
                                 <div class="d-flex">
                                     <a class="btn btn-primary btn-sm me-1" href="{{ route('admin.projects.show', $project) }}">View</a>

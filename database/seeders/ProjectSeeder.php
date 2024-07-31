@@ -25,7 +25,6 @@ class ProjectSeeder extends Seeder
             $newProject->description = $faker->paragraph(3);
             $newProject->user_id = $faker->randomElement($users);
             $newProject->image_url = $faker->imageUrl(300, 300, 'technology');
-            $newProject->stack = $faker->randomElement(['PHP', 'JavaScript', 'Python', 'Java', 'Ruby', 'C#']);
             $newProject->save();
         }
     }
