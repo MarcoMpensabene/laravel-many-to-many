@@ -10,6 +10,7 @@ use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 use function PHPSTORM_META\type;
 
@@ -41,10 +42,15 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+
         $data = $request->validated();
+
+        $img_path = Storage::put('uploads/projects', $data['image_url']);
+
         $data['user_id'] = Auth::user()->id;
+        $data['image_url'] = $img_path;
         $newProject = Project::create($data);
-        $newProject->technologies()->sync($data["technology"]);
+        $newProject->technologies()->sync($data["technologies"]);
         return redirect()->route('admin.projects.show', $newProject);
     }
 
@@ -74,7 +80,7 @@ class ProjectController extends Controller
         // dd($request->all());
         $data = $request->validated(); //richiedo tutti i dati
         $project->update($data); // modifico i dati del singolo Projecte attraverso il mio form con i value già presenti
-        $project->technologies()->sync($data["technology"]);
+        $project->technologies()->sync($data["technologies"]);
         return redirect()->route('admin.projects.show', $project)->with('message', $project->title . " Has Been Edited");
     }
 

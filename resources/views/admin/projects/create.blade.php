@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <h1>CREATE PROJECT </h1>
-                <form action="{{route('admin.projects.store')}}" method="POST" id="add-form">
+                <form action="{{route('admin.projects.store')}}" method="POST" id="add-form" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
                     <div class="mb-3">
@@ -45,7 +45,7 @@
 
                     <div class="mb-3">
                         <label for="image_url">URL Immagine</label>
-                        <input class="form-control form-control-sm" type="text" placeholder="URL" aria-label="URL" name="image_url" id="image_url">
+                        <input class="form-control form-control-sm" type="file" placeholder="URL" aria-label="URL" name="image_url" id="image_url">
                         @error('image_url')
                         <div class="alert alert-danger mt-2">
                             {{$message}}
@@ -58,10 +58,10 @@
 
                             @foreach ($technologies as $technology)
                             @if ($errors->any())
-                                <input type="checkbox" class="btn-check" name="technology[]" id="technology-check-{{$technology->id}}" autocomplete="off" value="
-                                {{$technology->id}}" {{in_array($technology->id, old('technology' , [])) ? "checked" : ""}}>
+                                <input type="checkbox" class="btn-check" name="technologies[]" id="technology-check-{{$technology->id}}" autocomplete="off" value="
+                                {{$technology->id}}" {{in_array($technology->id, old('technologies' , [])) ? "checked" : ""}}>
                             @else
-                                <input type="checkbox" class="btn-check" name="technology[]" id="technology-check-{{$technology->id}}" autocomplete="off" value="
+                                <input type="checkbox" class="btn-check" name="technologies[]" id="technology-check-{{$technology->id}}" autocomplete="off" value="
                                 {{$technology->id}}" {{$project->technologies->contains($technology) ? "checked" : ""}}>
                             @endif
                             <label class="btn btn-outline-primary" for="technology-check-{{$technology->id}}">{{$technology->name}}</label>

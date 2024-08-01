@@ -23,7 +23,7 @@
                                     @endforelse
                                 </p>
                             </div>
-                            <img src="{{$project->image_url}}" class="card-img-bottom object-fit-cover" style="height: 30rem"  alt="{{$project->title}}">
+                            <img src="{{asset('storage/' . $project->image_url) }}" class="card-img-bottom object-fit-cover" style="height: 30rem"  alt="{{$project->title}}">
                         </div>
                     </article>
                 </div>
