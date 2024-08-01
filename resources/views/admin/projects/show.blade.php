@@ -23,7 +23,12 @@
                                     @endforelse
                                 </p>
                             </div>
-                            <img src="{{asset('storage/' . $project->image_url) }}" class="card-img-bottom object-fit-cover" style="height: 30rem"  alt="{{$project->title}}">
+                            @if (str_starts_with($project->image_url , "http"))
+                                <img src="{{ $project->image_url}}" class="card-img-bottom object-fit-cover" style="height: 30rem"  alt="{{$project->title}}">
+                            @else
+                                <img src="{{asset('storage/' . $project->image_url) }}" class="card-img-bottom object-fit-cover" style="height: 30rem"  alt="{{$project->title}}">
+                            @endif
+
                         </div>
                     </article>
                 </div>
