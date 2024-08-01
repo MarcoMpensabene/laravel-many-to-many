@@ -41,6 +41,17 @@
                 </li>
                 @endif
 
+                @if (Route::has('admin.technologies.index'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.technologies.index') }}">{{ __('TechnologyList') }}</a>
+                </li>
+                @endif
+
+                @if (Route::has('admin.technologies.create'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.technologies.create') }}">{{ __('AddTechnology') }}</a>
+                </li>
+                @endif
 
 
 

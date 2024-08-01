@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-8">
-                <h1>CREATE TYPE </h1>
+                <h1>EDIT TYPE </h1>
                 <form action="{{route('admin.types.store')}}" method="POST" id="add-form" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="mb-3 d-flex justify-content-between p-2">
-                        <input type="submit" value="Create new Project" class="btn btn-primary" >
+                        <input type="submit" value="Edit Type" class="btn btn-primary" >
                         <input type="reset" value="Reset" class="btn btn-danger">
                     </div>
                     </div>

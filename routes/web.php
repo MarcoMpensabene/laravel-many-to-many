@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController as GuestHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,5 +34,6 @@ Route::middleware('auth')->name('admin.')->prefix('admin/')->group(
         Route::delete('projects/permanent-delete/{project}', [ProjectController::class, "permanentDelete"])->name('projects.permanent-delete');
         Route::resource('projects', ProjectController::class);
         Route::resource('types', TypeController::class);
+        Route::resource('technologies', TechnologyController::class);
     }
 );

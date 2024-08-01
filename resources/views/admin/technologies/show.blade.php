@@ -19,11 +19,11 @@
                 </thead>
                 <tbody class="table-group-divider">
                         <tr>
-                            <td>{{ $type->id }}</td>
+                            <td>{{ $technology->id }}</td>
                             <td >
-                                <span class="badge p-2" style="background-color : {{$type->color}}">{{ $type->name }}</span><!-- Ternario dell'if che precede  -->
+                                <span class="badge p-2" style="background-color : {{$technology->color}}">{{ $technology->name }}</span>
                             </td>
-                            <td>{{ $type->color }}</td>
+                            <td>{{ $technology->color }}</td>
 
                         </tr>
                 </tbody>

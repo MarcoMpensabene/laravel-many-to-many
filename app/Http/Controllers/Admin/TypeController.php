@@ -63,7 +63,7 @@ class TypeController extends Controller
     {
         $data = $request->validated();
         $type->update($data);
-        return redirect()->route('admin.projects.show', $type)->with('message', $type->name . " Has Been Edited");
+        return redirect()->route('admin.types.show', $type)->with('message', $type->name . " Has Been Edited");
     }
 
     /**

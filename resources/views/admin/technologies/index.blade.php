@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h1>Type Index</h1>
+        <h1>Technology Index</h1>
         <article class="col-12">
             @if (session("message"))
                 <div class="alert alert-danger">
@@ -20,22 +20,18 @@
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
-                    @foreach ($types as $type)
+                    @foreach ($technologies as $technology)
                         <tr>
-                            <td>{{ $type->id }}</td>
-                            {{-- @if ($type->type)
-                            <td >{{$type->type->name}}</td>
-                            @else
-                            <td >No type</td> --}}
+                            <td>{{ $technology->id }}</td>
                             <td >
-                                <span class="badge p-2" style="background-color : {{$type->color}}">{{ $type->name }}</span><!-- Ternario dell'if che precede  -->
+                                <span class="badge p-2" style="background-color : {{$technology->color}}">{{ $technology->name }}</span><!-- Ternario dell'if che precede  -->
                             </td>
-                            <td>{{ $type->color }}</td>
+                            <td>{{ $technology->color }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a class="btn btn-primary btn-sm me-1" href="{{route('admin.types.show' , $type)}}">View</a>
-                                    <a class="btn btn-warning btn-sm me-1" href="{{route('admin.types.edit' , $type)}}">Edit</a>
-                                    <form action="{{ route('admin.types.destroy', $type) }}" method="POST" class="delete-form">
+                                    <a class="btn btn-primary btn-sm me-1" href="{{route('admin.technologies.show' , $technology)}}">View</a>
+                                    <a class="btn btn-warning btn-sm me-1" href="{{route('admin.technologies.edit' , $technology)}}">Edit</a>
+                                    <form action="{{ route('admin.technologies.destroy', $technology) }}" method="POST" class="delete-form">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>
