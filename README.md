@@ -34,3 +34,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 > Bonus 1:
 > Creare il seeder per il model Technology.Bonus 2:
 > Aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.Buon lavoro e buon divertimento!
+
+Parte 2 
+
+Esercizio di oggi: Laravel Boolfolio - Cover Image Ciao ragazze e ciao ragazzi, continuiamo a lavorare nella repo dei giorni scorsi e aggiungiamo un’immagine (uplodata) ai nostri progetti.Ricordiamoci di creare il symlink con l’apposito comando artisan e di aggiungere l’attributo enctype="multipart/form-data" ai form di creazione e di modifica!Buon lavoro e buon divertimento!
