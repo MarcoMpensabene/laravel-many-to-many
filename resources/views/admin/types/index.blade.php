@@ -33,8 +33,8 @@
                             <td>{{ $type->color }}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a class="btn btn-primary btn-sm me-1" href="#">View</a>
-                                    <a class="btn btn-warning btn-sm me-1" href="#">Edit</a>
+                                    <a class="btn btn-primary btn-sm me-1" href="{{route('admin.types.show' , $type)}}">View</a>
+                                    <a class="btn btn-warning btn-sm me-1" href="{{route('admin.types.edit' , $type)}}">Edit</a>
                                     <form action="{{ route('admin.types.destroy', $type) }}" method="POST" class="delete-form">
                                         @method("DELETE")
                                         @csrf

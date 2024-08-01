@@ -25,10 +25,24 @@
                         </li>
                 @endif
 
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.projects.deleted-index') }}">{{ __('DeletedProjectIndex') }}</a>
                 </li>
+
+                @if (Route::has('admin.types.index'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.types.index') }}">{{ __('TypeList') }}</a>
+                    </li>
+                @endif
+
+                @if (Route::has('admin.types.create'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.types.create') }}">{{ __('AddType') }}</a>
+                </li>
+                @endif
+
+
+
 
 
             </ul>
