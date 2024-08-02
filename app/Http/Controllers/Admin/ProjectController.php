@@ -89,7 +89,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        $project->technologies()->detach();
+
         $project->delete();
 
         return redirect()->route('admin.projects.index')->with('message', "N:" . $project->id . " " . $project->title . " Has Been Deleted");
@@ -111,6 +111,7 @@ class ProjectController extends Controller
     public function permanentDelete(string $id)
     {
         $project = Project::onlyTrashed()->findOrFail($id);
+        $project->technologies()->detach();
         $project->forceDelete();
         return redirect()->route('admin.projects.deleted-index')->with('message', $project->title . " Has Been Permanently Removed");
     }
