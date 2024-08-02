@@ -21,7 +21,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::paginate(10);
         // $projects = Project::where("user_id", Auth::id())->get(); // ! Mostra solo i post collegati all'account (grazie allo user_id )
         return view('admin.projects.index', compact('projects'));
     }

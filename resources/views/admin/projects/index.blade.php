@@ -35,7 +35,7 @@
                                 <span class="badge p-2" style="background-color : {{$project->type->color}}">{{ $project->type ? $project->type->name : 'No type' }}</span><!-- Ternario dell'if che precede  -->
                             </td>
                             <td>{{ $project->title }}</td>
-                            <td>{{ Str::limit($project->description, 50) }}</td> <!-- Limita la lunghezza -->
+                            <td>{{ Str::limit($project->description, 30) }}</td> <!-- Limita la lunghezza -->
                             <td>{{ $project->user->name }}</td>
                             <td>{{ Str::limit($project->image_url, 20) }}</td> <!-- Limita la lunghezza -->
                             <td>
@@ -62,6 +62,9 @@
                 </tbody>
             </table>
         </article>
+        <div class="pagination">
+            {{$projects->links()}};
+        </div>
     </div>
 </div>
 @endsection
